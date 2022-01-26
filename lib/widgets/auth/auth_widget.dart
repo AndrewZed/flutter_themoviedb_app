@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_themoviedb_app/theme/app_button_style.dart';
-import 'package:flutter_themoviedb_app/widgets/main_screen/main_screen_widget.dart';
 
 class AuthWidget extends StatefulWidget {
   AuthWidget({Key? key}) : super(key: key);
