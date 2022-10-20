@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_themoviedb_app/theme/app_button_style.dart';
 
 class AuthWidget extends StatefulWidget {
-  AuthWidget({Key? key}) : super(key: key);
+  const AuthWidget({Key? key}) : super(key: key);
 
   @override
   _AuthWidgetState createState() => _AuthWidgetState();
@@ -13,11 +13,12 @@ class _AuthWidgetState extends State<AuthWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Войти в свою учетную запись'),
+        title: const Text('Войти в свою учетную запись'),
         centerTitle: true,
       ),
       body: ListView(
-        children: [
+        physics: const BouncingScrollPhysics(),
+        children: const [
           _HeaderWidget(),
         ],
       ),
@@ -30,7 +31,7 @@ class _HeaderWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle = const TextStyle(fontSize: 16, color: Colors.black);
+    const textStyle = TextStyle(fontSize: 16, color: Colors.black);
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 16),
@@ -40,27 +41,25 @@ class _HeaderWidget extends StatelessWidget {
           const SizedBox(height: 25),
           _FormWidget(),
           const SizedBox(height: 25),
-          Text(
+          const Text(
               'Чтобы пользоваться правкой и возможностями рейтинга TMDB,'
               'а также получить персональные рекомендации, необходимо войти в свою учётную запись.'
-              'Если у вас нет учётной записи, её регистрация является бесплатной и простой.'
-              ' Нажмите здесь, чтобы начать.',
+              'Если у вас нет учётной записи, её регистрация является бесплатной и простой.',
               style: textStyle),
           const SizedBox(height: 5),
           TextButton(
             style: AppButtonStyle.linkButton,
             onPressed: () {},
-            child: Text('Регистрация'),
+            child: const Text('Регистрация'),
           ),
           const SizedBox(height: 25),
-          Text(
-              'Если Вы зарегистрировались, но не получили письмо для подтверждения, '
-              'нажмите здесь, чтобы отправить письмо повторно.',
+          const Text(
+              'Если Вы зарегистрировались, но не получили письмо для подтверждения, ',
               style: textStyle),
           TextButton(
             style: AppButtonStyle.linkButton,
             onPressed: () {},
-            child: Text('Подтвердить email'),
+            child: const Text('Подтвердить email'),
           ),
         ],
       ),
@@ -76,8 +75,8 @@ class _FormWidget extends StatefulWidget {
 }
 
 class __FormWidgetState extends State<_FormWidget> {
-  final _loginTextController = TextEditingController();
-  final _passwordTextController = TextEditingController();
+  final _loginTextController = TextEditingController(text: 'admin');
+  final _passwordTextController = TextEditingController(text: 'admin');
   String? errorText;
 
   void _auth() {
@@ -86,8 +85,6 @@ class __FormWidgetState extends State<_FormWidget> {
 
     if (login == 'admin' && password == 'admin') {
       errorText = null;
-      print('open app');
-
       Navigator.of(context).pushReplacementNamed('/main_screen');
     } else {
       errorText = 'Неверный логин или пароль';
@@ -109,7 +106,7 @@ class __FormWidgetState extends State<_FormWidget> {
     final textFieldDecorator = InputDecoration(
       border:
           OutlineInputBorder(borderSide: BorderSide(color: color, width: 0.0)),
-      contentPadding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      contentPadding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       isCollapsed: true,
     );
     return Column(
@@ -118,7 +115,7 @@ class __FormWidgetState extends State<_FormWidget> {
         if (errorText != null) ...[
           Text(
             errorText!,
-            style: TextStyle(
+            style: const TextStyle(
               color: Colors.red,
               fontSize: 17,
             ),
@@ -146,7 +143,7 @@ class __FormWidgetState extends State<_FormWidget> {
           obscureText: true,
         ),
         const SizedBox(
-          height: 30,
+          height: 25,
         ),
         Row(
           children: [
@@ -156,7 +153,7 @@ class __FormWidgetState extends State<_FormWidget> {
                 backgroundColor: MaterialStateProperty.all(color),
                 foregroundColor: MaterialStateProperty.all(Colors.white),
                 textStyle: MaterialStateProperty.all(
-                  TextStyle(
+                  const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w700,
                   ),
@@ -168,7 +165,7 @@ class __FormWidgetState extends State<_FormWidget> {
                   ),
                 ),
               ),
-              child: Text('Войти'),
+              child: const Text('Войти'),
             ),
             const SizedBox(
               width: 30,
@@ -176,7 +173,7 @@ class __FormWidgetState extends State<_FormWidget> {
             TextButton(
               onPressed: _resetPassword,
               style: AppButtonStyle.linkButton,
-              child: Text('Сбросить пароль'),
+              child: const Text('Сбросить пароль'),
             ),
           ],
         )

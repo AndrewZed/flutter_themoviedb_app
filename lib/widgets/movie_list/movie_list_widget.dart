@@ -1,3 +1,4 @@
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_themoviedb_app/resources/resources.dart';
 
@@ -129,6 +130,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           padding: const EdgeInsets.only(top: 70),
           itemCount: _filteredMovies.length,
           itemExtent: 163,
+          physics: BouncingScrollPhysics(),
           itemBuilder: (BuildContext context, int index) {
             final movie = _filteredMovies[index];
             return Padding(
