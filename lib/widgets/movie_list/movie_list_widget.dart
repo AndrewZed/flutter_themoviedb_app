@@ -1,14 +1,15 @@
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_themoviedb_app/resources/resources.dart';
 
 class Movie {
+  final int id;
   final String imageName;
   final String title;
   final String time;
   final String description;
 
   Movie({
+    required this.id,
     required this.imageName,
     required this.title,
     required this.time,
@@ -26,6 +27,7 @@ class MovieListWidget extends StatefulWidget {
 class _MovieListWidgetState extends State<MovieListWidget> {
   final _movies = [
     Movie(
+      id: 1,
       imageName: AppImages.moviePlachholder,
       title: 'Веном 2',
       time: '30 сентября, 2021',
@@ -33,6 +35,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 2,
       imageName: AppImages.moviePlachholder,
       title: 'Прибытие',
       time: '30 сентября, 2021',
@@ -40,6 +43,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 3,
       imageName: AppImages.moviePlachholder,
       title: 'Назад в будущее 1',
       time: '30 сентября, 2021',
@@ -47,6 +51,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 4,
       imageName: AppImages.moviePlachholder,
       title: 'Назад в будущее 2',
       time: '30 сентября, 2021',
@@ -54,6 +59,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 5,
       imageName: AppImages.moviePlachholder,
       title: 'Назад в будущее 3',
       time: '30 сентября, 2021',
@@ -61,6 +67,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 6,
       imageName: AppImages.moviePlachholder,
       title: 'Первому игроку приготовиться',
       time: '30 сентября, 2021',
@@ -68,6 +75,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 7,
       imageName: AppImages.moviePlachholder,
       title: 'Джентельмены',
       time: '30 сентября, 2021',
@@ -75,6 +83,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 8,
       imageName: AppImages.moviePlachholder,
       title: 'Тихие зори',
       time: '30 сентября, 2021',
@@ -82,6 +91,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 9,
       imageName: AppImages.moviePlachholder,
       title: 'В бой идут одни старики',
       time: '30 сентября, 2021',
@@ -89,6 +99,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
           'Более чем через год после тех событий журналист Эдди Брок пытается приспособиться к жизни в качестве хозяина инопланетного симбиота Венома, который наделяет его сверхчеловеческими способностями. Брок пытается возродить свою карьеру и берет интервью у серийного убийцы Клетуса Касади, который по воле случая становится хозяином Карнажа и сбегает из тюрьмы после неудавшейся казни.',
     ),
     Movie(
+      id: 10,
       imageName: AppImages.moviePlachholder,
       title: 'Дюна',
       time: '30 сентября, 2021',
@@ -117,8 +128,14 @@ class _MovieListWidgetState extends State<MovieListWidget> {
   @override
   void initState() {
     super.initState();
-    _searchMovies();
+    _filteredMovies = _movies;
     _searchController.addListener(_searchMovies);
+  }
+
+  void _onMovieTap(int index) {
+    final id = _movies[index].id;
+    Navigator.of(context)
+        .pushNamed('/main_screen/movie_details', arguments: id);
   }
 
   @override
@@ -190,9 +207,7 @@ class _MovieListWidgetState extends State<MovieListWidget> {
                     color: Colors.transparent,
                     child: InkWell(
                       borderRadius: BorderRadius.circular(10),
-                      onTap: () {
-                        print('11');
-                      },
+                      onTap: () => _onMovieTap(index),
                     ),
                   )
                 ],
