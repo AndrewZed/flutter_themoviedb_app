@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_themoviedb_app/resources/resources.dart';
 import 'package:flutter_themoviedb_app/widgets/elements/radial_percent_widget.dart';
 
-import 'movie_details_main_screen_cast_widget.dart';
-
 class MovieDatailsMainInfoWidget extends StatelessWidget {
   const MovieDatailsMainInfoWidget({Key? key}) : super(key: key);
 
@@ -29,7 +27,6 @@ class MovieDatailsMainInfoWidget extends StatelessWidget {
         ),
         SizedBox(height: 30),
         _PeopleWidget(),
-        MovieDetailsMainScreenCastWidget()
       ],
     );
   }
